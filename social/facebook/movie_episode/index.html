@@ -11,21 +11,30 @@
             <meta property="og:image" content="https://devrkela.github.io/social/facebook/video/bigbucky.jpg" />
             <meta property="og:image:width" content="1278" />
             <meta property="og:image:height" content="740" />
-            <meta property="og:type"  content="website" />
-            <meta property="og:description" content="On teste la prévisualisation pour les posts videos facebook. T'as vu... si si la famine!" />
+            <meta property="og:description" content="On teste la prévisualisation pour les posts films facebook. T'as vu... si si la famine!" />
             <meta property="og:determiner" content="le ?" />
             <meta property="og:locale" content="fr_FR" />
             <meta property="og:site_name" content="devrkela" />
+
+                    <!-- Le type utilisé -->
+            <meta property="og:type"  content="video.movie" />
+            <meta property="video:actor" content="<url> -> <profile>" />
+
+            <!-- Le rôle de l'acteur. -->
+            <meta property="video:actor:role" content="<text>" />
+
+            <!-- Le ou les directeurs du film. -->
+            <meta property="video:director" content="<url> -> <profile>" />
+
+            <!-- Le ou les écrivains du film. -->
+            <meta property="video:writer" content="<url> -> <profile>" />
+
+            <meta property="video:duration" content="30" />
+            <meta property="video:release_date" content="2021-01-01" />
+            <meta property="video:tag" content="Terre" />
+            <meta property="video:tag" content="nuit" />
+            <meta property="video:tag" content="lumiére" />
     </head>
     <body>
-        <video src="./bigbucky.mp4"/>
-        <script>
-            const video = document.querySelector("video");
-
-            video.onloadedmetadata = function(){
-                const {videoWidth,videoHeight} = video
-                console.log(videoWidth, videoHeight)
-            }
-        </script>
     </body>
 </html>
