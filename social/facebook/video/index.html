@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+    <head>
+            <meta property="og:url"   content="https://devrkela.github.io/social/facebook/video/" />
+            <meta property="og:title" content="Video" />
+            <meta property="og:video" content="https://devrkela.github.io/social/facebook/video/bigbucky.mp4" />
+            <meta property="og:video:secure_url" content="https://devrkela.github.io/social/facebook/video/bigbucky.mp4" />
+            <meta property="og:video:type" content="video/mp4" />
+            <meta property="og:video:width" content="1280" />
+            <meta property="og:video:height" content="720" />
+            <meta property="og:image" content="https://devrkela.github.io/social/facebook/video/bigbucky.jpg" />
+            <meta property="og:image:width" content="1278" />
+            <meta property="og:image:height" content="740" />
+            <meta property="og:type"  content="website" />
+            <meta property="og:description" content="On teste la prévisualisation pour les posts videos facebook. T'as vu... si si la famine!" />
+            <meta property="og:determiner" content="le ?" />
+            <meta property="og:locale" content="fr_FR" />
+            <meta property="og:site_name" content="devrkela" />
+    </head>
+    <body>
+        <video src="./bigbucky.mp4"/>
+        <script>
+            const video = document.querySelector("video");
+
+            video.onloadedmetadata = function(){
+                const {videoWidth,videoHeight} = video
+                console.log(videoWidth, videoHeight)
+            }
+        </script>
+    </body>
+</html>
