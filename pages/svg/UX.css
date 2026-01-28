@@ -1,0 +1,75 @@
+
+input{
+    width:50vw;
+}
+
+svg{
+    width:50vmin;
+    height:50vmin;
+    outline:1px solid #bec8ce;
+    transform: scale(1,-1);
+    margin-bottom:16px;
+}
+
+svg > path, svg > circle{
+    stroke:#006ca5;
+    stroke-width: 0.01px;
+    fill:transparent;
+    shape-rendering:geometricPrecision;
+}
+
+svg > circle{ 
+    fill:rgb(84 84 206 / 20%);
+}
+
+svg > #slidePoint{
+    stroke:lch(40% 10 210);
+    fill:#4b63664d;
+}
+
+svg > #segment{
+    stroke:red;
+}
+
+.accroche{
+    stroke:orange;
+    display:none;
+}
+
+.intersection{
+    stroke:#2eadfe22;
+  
+}
+
+#quadratic{
+    stroke:yellow;
+}
+
+.control{
+    r:0.002vmin;
+}
+
+.quadcontrol{
+    r:0.002vmin;
+    stroke:red;
+}
+
+.quad{
+    stroke:red;
+}
+
+#graph > circle{
+    stroke:#545f77;
+    fill:#545f774d;
+    stroke-width:0.001vmin
+}
+
+portrait{
+    border-top-left-radius:100%;
+    border-top-right-radius:35%;
+    border-bottom-left-radius:35%;
+    border-bottom-right-radius:35%;
+    width:48px;
+    height:48px;
+    border:1px solid aliceblue;
+}

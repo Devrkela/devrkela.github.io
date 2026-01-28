@@ -1,0 +1,101 @@
+
+
+
+svg{
+    width:100%;
+    height:auto;
+    max-width:344px;
+}
+
+#fullscreen{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#play{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+circle{
+    stroke:white;
+    stroke-width:0.01;
+    fill:#006ca5;
+}
+
+input{
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+line{
+    stroke-width:0.013px;
+    stroke:#006ca5;
+}
+
+path{
+    stroke-width:0.002px;
+    stroke:#4b6366;
+    fill:none;
+}
+#diago {
+    stroke-width:0.002px;
+    stroke:#45db5e;  
+}
+
+
+svg{
+    background:#f3f3f3;
+    height:auto;
+    width:100%;
+    transform:scale(1, -1);
+}
+
+#graph{
+    stroke:#2bca5466;
+    stroke-width:0.01;
+}
+
+.frequences {
+    color:#006ca5;
+}
+
+.inspiration{
+    position:absolute;
+    bottom:16px;
+    padding:0 16 0 16;
+    background:#01072d;
+}
+
+main{
+    padding:8px;
+
+    box-sizing:border-box;
+    font:400 14px / 20px Inter;
+    letter-spacing:0.25px;
+}
+main > div.controller {
+    width:80%;
+    display:flex;
+    justify-content:center;
+    font:400 14px / 20px Inter;
+    letter-spacing:0.25px;
+}
+
+.controller > button > .hovered{
+    background:#4b63661a;
+}
+
+.controller > button > .label,
+.controller > button > .icon{
+    color:#4b6366;
+}
+
+#render{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}

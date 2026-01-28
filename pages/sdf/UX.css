@@ -1,0 +1,70 @@
+
+
+canvas{
+    width:50vmin;
+    height:50vmin;
+
+    border:8px solid lch(var(--color-surface-container-low));
+}
+
+
+
+#fullscreen{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#launch{
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+circle{
+    stroke:aliceblue;
+    stroke-width:0.01;
+    fill:aqua;
+}
+
+input{
+    position:absolute;
+    bottom:0;
+    left:0;
+}
+
+line{
+    stroke-width:0.013px;
+    stroke:#259bfe;
+}
+
+path{
+    stroke-width:0.002px;
+    stroke:#45db5e;
+    fill:none;
+}
+#diago {
+    stroke-width:0.002px;
+    stroke:#45db5e;  
+}
+
+screen-recorder{
+    position:fixed;
+    right:0;
+    bottom:0;
+}
+
+fullscreen{
+    position:fixed;
+    bottom:0;
+    left:0;
+  
+}
+
+.inspiration{
+    position:absolute;
+    bottom:16px;
+    padding:0 16px 0 16px;
+    background:#021135;
+    color:white;
+}

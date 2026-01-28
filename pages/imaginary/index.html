@@ -1,0 +1,215 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script src="/condition.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="/compact.css" rel="stylesheet">
+    <link href="./UX.css" rel="stylesheet">
+  </head>
+  <body menu="false">
+    <div aria-hidden="true" class="scrim"></div>
+    <header>
+      <button id="toggle_menu" class="round">
+        <div aria-hidden="true" class="decoration">
+          <div aria-hidden="true" class="pressed"></div>
+        </div>
+        <div aria-hidden="true" class="hovered"></div>
+        <span class="material-symbols-rounded icon fill">menu
+                </span>
+      </button>
+    </header>
+    <nav class="navigationdrawer">
+      <button id="close_menu" class="">
+          <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+          </div>
+          <div aria-hidden="true" class="hovered"></div>
+          <span class="material-symbols-rounded icon fill">
+            chevron_backward
+          </span>
+      </button>    
+      <ul role="menu">
+        <li role="none">
+          <a href="/pages/calendar" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">calendar_today
+                        </span>
+            <p class="label">Calendrier</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/colorimetrie" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">palette
+                        </span>
+            <p class="label">Espace de couleur</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/filtre" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">filter
+                        </span>
+            <p class="label">SVG Filtres</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/imaginary" role="menuitem" aria-selected="true">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">line_curve
+                        </span>
+            <p class="label">Transformation de Fourier</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/qrcode" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">qr_code
+                        </span>
+            <p class="label">QR Code</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/sdf" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">3d
+                        </span>
+            <p class="label">Ray marcher</p>
+          </a>
+        </li>
+        <li role="none">
+          <a href="/pages/svg" role="menuitem" aria-selected="false">
+            <div aria-hidden="true" class="decoration">
+              <div aria-hidden="true" class="pressed"></div>
+            </div>
+            <div aria-hidden="true" class="hovered"></div>
+            <span aria-hidden="true" class="icon material-symbols-rounded fill">polyline
+                        </span>
+            <p class="label">SVG</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+
+        <div id="indication"></div>
+        
+        <div id="render">
+        <svg width="1920" height="1080" viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                path{
+                    stroke-width:0.002px;
+                    fill:none;
+                }
+                
+                rect{
+                    fill:#15191e;
+                }
+            </style>
+           
+            <path id="cir"></path>
+                        <circle r="0.05"></circle>
+
+        </svg>
+        </div>
+            La fréquence actuelle est de <span id='actuel' class="frequences">0HZ</span>
+        <div class="controller">
+              <button id="m100" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">-100HZ</p>
+            </button>   
+            <button id="m10" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">-10HZ</p>
+            </button>   
+            <button id="m1" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">-1HZ</p>
+            </button>   
+              <button id="p1" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">+1HZ</p>
+            </button>   
+              <button id="p10" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">+10HZ</p>
+            </button>
+              <button id="p100" class="text">
+                <div aria-hidden="true" class="decoration">
+                    <div aria-hidden="true" class="pressed"></div>
+                </div>
+                <div aria-hidden="true" class="hovered"></div>
+                <p class="label">+100HZ</p>
+            </button> 
+        </div>
+    </main>
+      <button id="info">
+        <div aria-hidden="true" class="decoration">
+          <div aria-hidden="true" class="pressed"></div>
+        </div>
+        <div aria-hidden="true" class="hovered"></div>
+        <span class="material-symbols-rounded icon fill">info
+                </span>
+      </button>
+    <aside>
+      <h3>Technologie utilisés</h3>
+      <div class="chips">
+        <label class="label chip">HTML</label>
+        <label class="label chip">CSS</label>
+        <label class="label chip">Javascript</label>
+        <label class="label chip">SVG API</label>
+      </div>
+      <hr>
+      <h3>Description</h3>
+      <p>
+        Mise en place d'une transformée de Fourier, permettant de rechercher les fréquences contenus dans un son.
+      </p>
+      <hr>
+      <h3>Lien utiles</h3>
+      <p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG API</a> ‧ 
+        <a href="https://fr.wikipedia.org/wiki/Transformation_de_Fourier">Transformée de Fourier</a>      </p>
+    </aside>
+    <script src="/main.js" type="module"></script>
+    <script src="./cpu.js" type="module"></script>
+  </body>
+</html>
+
+<!-- 622px -->
