@@ -194,8 +194,6 @@ function uvxy(x,y){
   return [4*x/(-2*x+12*y+3),(9*y)/(-2*x+12*y+3)];
 }
 
-console.log(uvxy(0.3127,0.3290))
-console.log(uv(srgbwhite))
 const x = 0.3127;
 const y = 0.3290;
 const Y = 1;

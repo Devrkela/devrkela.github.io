@@ -425,3 +425,9 @@ a, a:visited,a:link{
 #info > .icon{
   color:white;
 }
+
+.show_code{
+  position:absolute;
+  bottom:24px;
+  right:24px;
+}

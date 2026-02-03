@@ -77,10 +77,6 @@ function getNumberOfDayInMonth(year, month){
 
 const cal = document.querySelector("calendrier");
 
-function estUneFonction(fonction){
-  return typeof fonction === "";
-}
-
 function Abonnement(){
   const souscriptions = {};
   
