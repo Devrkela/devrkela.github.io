@@ -510,12 +510,11 @@ function QRCodeBuffer(group_string){
 
   QRCodeBuffer.create.dataAndError.call(this, group_string);
 
-  let final = [new Array(6),new Array(6),new Array(6),new Array(6),new Array(6),new Array(6)];
+  let final ;
 
   this.getData = function getData(){
     let score = Infinity;
-  
-    for(let mask = 0; mask <= 7; mask++){
+    let mask = 4;  
       const test = QRCodeBuffer.masking.call(this, QRCodeBuffer.mask[mask]);
       QRCodeBuffer.create.format.call(this, test, mask);
   
@@ -525,7 +524,7 @@ function QRCodeBuffer(group_string){
         score = current;
         final = test;
       }
-    }
+
 
     return final;
   }

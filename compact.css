@@ -431,3 +431,13 @@ a, a:visited,a:link{
   bottom:24px;
   right:24px;
 }
+
+nav > h3{
+  margin-left: 16px;
+  margin-bottom:16px;
+}
+
+hr.hr_menu {
+  width:90%;
+  align-self:center;
+}

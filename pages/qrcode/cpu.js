@@ -1,30 +1,27 @@
 import QRCodeMessage from "./module/message.js";
 
-const gl = canvas.getContext("2d", {willReadFrequently:true});
+const gl = canvas.getContext("2d");
 
-const qrcode = new QRCodeMessage("http://localhost:3000/pages/qrcode/", "L");
+const qrcode = new QRCodeMessage("http://localhost:3000/pages/qrcode/", "H");
 
 function show(buffer){
 
   canvas.width = Math.sqrt(buffer.length);
   canvas.height = canvas.width;
 
-  gl.rect(0,0,canvas.width,canvas.height);
-  gl.fillStyle = "black";
-  gl.fill();
+  
 
-  const imageData = gl.getImageData(0, 0, canvas.width, canvas.height);
+  for(let y = 0; y < canvas.height; y++){
+    for(let x = 0; x < canvas.width; x++){
+      const bit = buffer[x + y * canvas.width];
 
-  for(let i = 0; i < buffer.length; i++){
-    let opacity = buffer[i];
-
-    if(opacity === undefined){
-      opacity = 0.5;
+      if(bit){
+        gl.rect(x, y, 1, 1);
+        gl.fill();
+      }
     }
-    imageData.data[i * 4 + 3] *= opacity;
   }
 
-  gl.putImageData(imageData, 0, 0);
 }
 
 function generate(){
