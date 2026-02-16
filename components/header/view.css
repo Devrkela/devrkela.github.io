@@ -73,6 +73,15 @@ header > nav > a:hover {
     color:#651fff;
 }
 
+header > nav > a{
+    display:flex;
+    gap:8px;
+}
+
+header > nav > a > span.material-symbols-outlined{
+    font-size:16px;
+}
+
 header > nav > a.logo{
     height:100%;
     display:flex;
