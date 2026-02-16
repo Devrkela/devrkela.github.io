@@ -1,0 +1,30 @@
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 135.46666 135.46667" version="1.1" id="svg1" inkscape:version="1.4.3 (0d15f75, 2025-12-25)" sodipodi:docname="logo.svg" style="&#10;    --color-light: #651FFF;&#10;    --color-dark: lch(27.73 118.83 304.24 / 1););&#10;">
+  <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" inkscape:document-units="mm" inkscape:zoom="0.82" inkscape:cx="245.12195" inkscape:cy="231.09756" inkscape:window-width="1300" inkscape:window-height="699" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1" inkscape:current-layer="layer1"/>
+  <defs id="defs1">
+    <linearGradient id="linearGradient26" inkscape:collect="always">
+      <stop style="stop-color: var(--color-dark);stop-opacity:1;" offset="0.20137267" id="stop22"/>
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="0.32190666" id="stop27"/>
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="0.57244205" id="stop28"/>
+      <stop style="stop-color: var(--color-dark);stop-opacity:1;" offset="0.70767623" id="stop26"/>
+    </linearGradient>
+    <linearGradient id="linearGradient17" inkscape:collect="always">
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="0" id="stop17"/>
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="1" id="stop18"/>
+    </linearGradient>
+    <linearGradient id="linearGradient15" inkscape:collect="always">
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="0" id="stop15"/>
+      <stop style="stop-color: var(--color-dark);stop-opacity:1;" offset="0.05989582" id="stop20"/>
+      <stop style="stop-color: var(--color-dark);stop-opacity:1;" offset="0.32121909" id="stop21"/>
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="0.46546438" id="stop19"/>
+      <stop style="stop-color: var(--color-light);stop-opacity:1;" offset="1" id="stop16"/>
+    </linearGradient>
+    <linearGradient inkscape:collect="always" xlink:href="#linearGradient15" id="linearGradient16" x1="41.75248" y1="37.591663" x2="94.611656" y2="100.58678" gradientUnits="userSpaceOnUse"/>
+    <linearGradient inkscape:collect="always" xlink:href="#linearGradient17" id="linearGradient18" x1="48.248077" y1="105.05106" x2="88.116028" y2="33.127369" gradientUnits="userSpaceOnUse"/>
+    <linearGradient inkscape:collect="always" xlink:href="#linearGradient26" id="linearGradient21" gradientUnits="userSpaceOnUse" x1="41.75248" y1="37.591663" x2="94.611656" y2="100.58678" gradientTransform="matrix(0.82746611,-0.68479047,0.82746611,0.68479047,-44.885176,100.36814)"/>
+  </defs>
+  <g inkscape:label="Calque 1" inkscape:groupmode="layer" id="layer1">
+    <path id="path7-6-5" style="fill:url(#linearGradient21);stroke-width:0.281664;" d="m 34.202047,87.952231 a 53.239374,44.059588 0 0 1 68.404613,0.887824 V 72.948159 A 53.239374,44.059588 0 0 0 34.202047,72.66804 Z"/>
+    <path id="path7-6" style="fill:url(#linearGradient16);stroke-width:0.264583" d="M 63.803775,27.368242 A 45.495426,45.495426 0 0 1 109.29919,72.863656 45.495426,45.495426 0 0 1 88.900951,110.81017 45.495426,45.495426 0 0 0 97.657523,83.976156 45.495426,45.495426 0 0 0 52.162108,38.480742 45.495426,45.495426 0 0 0 27.064939,46.029635 45.495426,45.495426 0 0 1 63.803775,27.368242 Z"/>
+    <path id="path7" style="fill:url(#linearGradient18);stroke-width:0.264583" d="M 72.560353,27.368242 A 45.495426,45.495426 0 0 0 27.064939,72.863656 45.495426,45.495426 0 0 0 47.463177,110.81017 45.495426,45.495426 0 0 1 38.706605,83.976156 45.495426,45.495426 0 0 1 84.20202,38.480742 45.495426,45.495426 0 0 1 109.29919,46.029635 45.495426,45.495426 0 0 0 72.560353,27.368242 Z"/>
+  </g>
+</svg>

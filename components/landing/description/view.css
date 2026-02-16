@@ -1,0 +1,63 @@
+.description{
+    font-size:20px;
+}
+
+.description > h1{
+    color:black;
+    font-size:2em;
+    margin:0;
+}
+
+.description > h1.logo{
+    background:linear-gradient(to bottom right, lch(50.7 107.68 303.88 / 1), lch(25.6 116.78 303.66 / 1));
+    color:transparent;
+    background-clip:text;
+}
+
+.description > p{
+    margin:0;
+    margin-top:12px;
+    font-size:1em;
+}
+
+.buttons{
+    margin-top:1em;
+    height:max-content;
+    display:flex;
+    gap:1em;
+}
+.buttons > .button{
+    padding:1em 2em 1em 2em;
+    font-size:1em;
+    text-decoration:none;
+    color:black;
+    background:#e9e9e9;
+    border-radius:100vmax;
+}
+
+.buttons > .button.highlight{
+    background:#4b09ea;
+    color:white;
+}
+
+@media(width < 840px){
+   .description {
+        font-size:18px;
+        align-self:start;
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+        align-items:center;
+        grid-row:2/3;
+        width:568px;
+    }
+}
+
+@media(width < 600px){
+   .description {
+           font-size:16px;
+
+       width:328px;
+    }
+
+}

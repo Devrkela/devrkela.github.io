@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="/index.css" rel="stylesheet">
+        <link href="../reference/index.css" rel="stylesheet">
+        <link href="./index.css" rel="stylesheet">
+        <link rel="stylesheet" href="/atom-one-dark.min.css">
+    </head>
+    <body>
+        <header>
+            <slot name="header"></slot>
+        </header>
+        <main class="reference">
+            <aside class="reference navigation">
+                <nav>
+                    <ul>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#compo">Un composant pour ascension</a></li>
+                        <li><a href="#use">Utiliser la librairie</a></li>
+                    </ul>          
+                </nav>
+            </aside>
+            <div class="scrim1"></div>
+                <div class="content">
+                    <div class="menu_bar">
+                        <button id="menu_secondary">
+                           <span class="material-symbols-outlined">
+                                list
+                            </span>
+                            Menu
+                        </button>
+                    </div>
+                 <h2 id="intro">Introduction</h2>
+                <p>Ascension est un framework Front-end javascript. Il contient plusieurs fonctions permettant de faciliter la création de composant natif.</p>
+                <hr>
+                <h2 id="compo">Un composant pour ascension</h2>
+                <p>Avec Ascension, un composant est représenté par un dossier content un fichier <span class="type">model.html</span>, <span class="type">view.css</span> et <span class="type">controller.js</span>.</p>
+                <p>Le fichier <span class="type">model.html</span> n'est pas un document complet. Il contient uniquement les balises nécessaire pour la création du composant:</p>
+                <pre>
+                    <code class="language-xml">
+&lt;div class=&quot;mon_composant&quot;&gt;
+    &lt;div class=&quot;nom&quot;&gt;Le bon&lt;/div&gt;
+    &lt;div class=&quot;prenom&quot;&gt;Jean&lt;/div&gt;
+&lt;/div&gt;
+                    </code>
+                </pre>
+                <p>Le fichier <span class="type">view.css</span> est un fichier css classique. Le mieux est de limiter la portée des classes au composant:</p>
+                <pre>
+                    <code class="language-css">
+.mon_composant {
+    /** Ajouter le style **/
+    width:max-content;
+}
+
+.mon_composant > .nom {
+    /** Ajouter le style **/
+    color:red;
+}
+
+.mon_composant > .prenom {
+    /** Ajouter le style **/
+    border:1px solid black;
+}
+                    </code>
+                </pre>
+                <p>Le fichier <span class="type">controller.js</span> est un fichier représentant une fonction javascript. Elle permet d'accrocher les événements (entre autre) au composant. Elle prend en paramêtre le model et les données accrochés au composant:</p>
+                <pre>
+                    <code class="language-js">
+/** Le fichier doit retourner une fonction unique **/
+function attache(model, data){
+    /** Accrocher les écouteur d'événements **/
+                        
+    model.querySelector(".mon_composant").onclick = console.log;
+}
+
+/** ou en mode iife **/
+
+(function(){
+    function click(e){
+        console.log(this.querySelector(".nom"), this.querySelector(".prenom"));
+    };
+                        
+    function attache(model, data){
+        /** Accrocher les écouteur d'événements **/
+                            
+        model.querySelector(".mon_composant").onclick = click
+    }
+
+    return attache;
+})()
+                    </code>
+                </pre>
+                <h2 id="use">Utiliser la librairie</h2>
+                <p>Les deux fonction principales sont <span class="type">fabrique</span> et <span class="type">installe</span>.</p>
+                <p><span class="type">fabrique</span> prend en paramêtre une url pointant vers le dossier contenant le composant. Elle retourne une promesse avec le composant.</p>
+                <pre>
+                    <code class="language-js">
+/** Exemple avec un dossier:
+    /mon_composant
+        model.html
+        view.css
+        controller.css
+**/
+
+const composant = await ascension.fabrique("/mon_composant/");
+                    </code>
+                </pre>
+                <p><span class="type">installe</span> prend en paramêtre un composant. Il l'installe automatiquement dans le DOM. On peut attacher optionellement dans des données en accrochant une propriété data au composant:</p>
+                <pre>
+                    <code class="language-js">
+composant.data = {name:"", prenom:""};
+ascension.installe(composant);
+                </pre>
+                </div>
+        </main>
+
+        <div class="scrim" aria-hidden="true"></div>
+        <script src="/ascension-iife-min.js"></script>
+
+        <script src="/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+
+        <script async type="module" src="../reference/index.js"></script>
+    </body>
+</html>

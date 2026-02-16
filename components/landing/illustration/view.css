@@ -1,0 +1,13 @@
+main > img{
+    width:80%;
+    max-width:512px;
+}
+
+@media(width < 840px){
+    main > img{
+        grid-row:1/2;
+        height:100%;
+        width:unset;
+        align-self:end;
+    }
+}

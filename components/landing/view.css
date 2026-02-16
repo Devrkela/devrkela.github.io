@@ -1,0 +1,22 @@
+body[page=landing] > main{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    height:100%;
+    width:100%;
+
+    align-items:center;
+    justify-items:center;
+    padding-left:16px;
+    padding-right:16px;
+}
+
+@media(width < 840px){
+    body[page=landing] > main{
+        grid-template-columns:1fr;
+        grid-template-rows:50% 50%;
+
+        justify-items:center;
+    }
+}
+

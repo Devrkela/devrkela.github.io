@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="/index.css" rel="stylesheet">
+        <link href="./index.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <slot name="header"></slot>
+        </header>
+        <main class="reference">
+            <aside class="reference navigation">
+                <nav>
+                    <h3>API</h3>
+                    <ul>
+                        <li><a href="#alimente">alimente</a></li>
+                        <li><a href="#entrepose">entrepose</a></li>
+                        <li><a href="#distribue">distribue</a></li>
+                        <li><a href="#fabrique">fabrique</a></li>
+                        <li><a href="#installe">installe</a></li>
+                    </ul>
+                    <h3 id="interface">Interface</h3>
+                    <ul>
+                        <li><a href="#dictionnaire-type">DictionnaireType</a></li>
+                        <li><a href="#options-composant">OptionsComposant</a></li>
+                        <li><a href="#composant">Composant</a></li>
+                    </ul>                
+                </nav>
+            </aside>
+            <div class="scrim1"></div>
+            <div class="content">
+                <div class="menu_bar">
+                    <button id="menu_secondary">
+                       <span class="material-symbols-outlined">
+                            list
+                        </span>
+                        Menu
+                    </button>
+                </div>
+             <h1>Référence</h1>
+            <p>Cette page contient les différents outils implémentés par Ascension.</p>
+            <hr>
+            <h2>API</h2>
+            <hr>
+            <section id="alimente">
+                <h3>alimente(<span class="parametre">url</span>: <span class="type">string</span>, <span class="parametre">type?</span>: <span class="type">DictionnaireType</span>): <span class="type">function</span></h3>
+                <p>Effectue une requête de la ressource et retourne un objet spécifique selon le type.</p>
+                <p class="retour">Retourne:</p>
+                <ul>
+                    <li>La valeur retournée par la fonction, si le type est <span class="type">iife</span> ou si il n'y a pas de type.</li>
+                    <li>Un <a href="https://developer.mozilla.org/fr/docs/Web/API/HTMLStyleElement" class="type">HTMLStyleElement</a>, si le type est <span class="type">css</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" class="type">Document</a>, si le type est <span class="type">html</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement" class="type">HTMLImageElement</a>, si le type est <span class="type">image</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/en-US/docs/Glossary/Literal" class="type">objet littéral</a>, si le type est <span class="type">json</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/en-US/docs/Web/API/SVGElement"class="type">SVGElement</a>, si le type est <span class="type">svg</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment"class="type">DocumentFragment</a>, si le type est <span class="type">template</span>.</li>
+                    <li>Un <a href="https://developer.mozilla.org/fr/docs/Web/API/HTMLVideoElement"class="type">HTMLVideoElement</a>, si le type est <span class="type">video</span>.</li>
+                </ul>    
+            </section>
+            <hr>
+            <section id="entrepose">
+                <h3>entrepose{<span class="parametre">put</span>: <span class="type">function</span>, <span class="parametre">get</span>: <span class="type">function</span>}: <span class="type">object</span></h3>
+                <p>Facilite la mise en cache des ressources.</p>
+                <div class="sub">
+                    <h4>put(<span class="parametre">url</span>: <span class="type">string</span>, <span class="parametre">value</span>: <span class="type">any</span>, <span class="parametre">type?</span>: <span class="type">DictionnaireType</span>)</h4>
+                    <p>Ajoute la ressource dans le cache.</p>
+                    <h4>get(<span class="parametre">url</span>: <span class="type">string</span>, <span class="parametre">type?</span>: <span class="type">DictionnaireType</span>)</h4>
+                    <p>Récupére la ressource du cache.</p>
+                    <p>Retourne la même chose que la fonction <a href="#alimente">alimente</a>.</p>                   
+                </div>
+
+            </section>
+            <hr>
+            <section id="distribue">
+                <h3>distribue(<span class="parametre">url</span>: <span class="type">string</span>, <span class="parametre">type?</span>: <span class="type">DictionnaireType</span>)</h3>
+                <p>Récupére une ressource via le réseau ou le cache, l'entrepose, si besoin, et retourne la ressource.</p>
+                <p>Retourne la même chose que la fonction <a href="#alimente">alimente</a>.</p>
+            </section>
+            <hr>
+            <section id="fabrique">
+                <h3>fabrique(<span class="parametre">url</span>: <span class="type">string</span>, <span class="parametre">options?</span>: <span class="type">OptionsComposant</span>)</h3>
+                <p>Récupére un composant. L'url doit pointer vers un dossier contenant un fichier "model.html", "view.css" et "controller.js". Les ressources sont automatiquement entreposées.</p>
+                <p> Le paramètre <span class="parametre">options</span> permet de filter les fichier recherchés dans le dossier. Par exemple, si html vaut <span class="type">false</span>, la fonction ne cherchera pas la ressource "model.html". </p>
+                <p>Retourne un objet du type <a href="#alimente">Composant</a>.</p>
+            </section>
+            <hr>
+            <section id="installe">
+                <h3>installe(<span class="parametre">composant</span>: <span class="type">Composant</span>)</h3>
+                <p>Installe un composant dans le document.</p>
+            </section>
+            <hr>
+            <h2>Interface</h2>
+            <hr>
+            <section id="dictionnaire-type">
+                <h3><span class="parametre">DictionnaireType</span>: <span class="type">Set&lt;String&gt;</String></span></h3>
+                <p>Représente un type de ressource.</p>
+                <p>La type doit être une valeur des valeurs suivantes {<span class="type">"iife"</span>, <span class="type">"css"</span>, <span class="type">"html"</span>, <span class="type">"image"</span>, <span class="type">"json"</span>, <span class="type">"svg"</span>, <span class="type">"template"</span>, <span class="type">"video"</span>}</p>
+            </section>
+            <hr>
+            <section id="options-composant">
+                <h3><span class="parametre">OptionsComposant</span>: <span class="type">Object</span></h3>
+                <p>Représente un objet permettant de filtrer les fichiers qui composent le composant.</p>
+                <p>L'interface de l'objet est {<span class="parametre">html?</span>: <span class="type">boolean</span>, <span class="parametre">css?</span>: <span class="type">boolean</span>, <span class="parametre">js?</span>: <span class="type">boolean</span>}</p>
+            </section>
+            <hr>
+            <section id="composant">
+                <h3><span class="parametre">Composant</span>: <span class="type">Object</span></h3>
+                <p>Représente les ressources inclus dans le composant.</p>
+                <p>L'interface de l'objet est {<span class="parametre">html?</span>: <span class="type">HTMLElement</span>, <span class="parametre">css?</span>: <span class="type">HTMLElement</span>, <span class="parametre">js?</span>: <span class="type">function</span>}</p>
+            </section>
+            </div>
+           
+        </main>
+
+        <div class="scrim"></div>
+        <script src="/ascension-iife-min.js"></script>
+
+        <script async type="module" src="./index.js"></script>
+    </body>
+</html>
