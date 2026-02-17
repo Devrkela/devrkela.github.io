@@ -109,11 +109,17 @@ function attache(model, data){
 const composant = await ascension.fabrique("/mon_composant/");
                     </code>
                 </pre>
-                <p><span class="type">installe</span> prend en paramêtre un composant. Il l'installe automatiquement dans le DOM. On peut attacher optionellement dans des données en accrochant une propriété data au composant:</p>
+                <p><span class="type">installe</span> prend en paramêtre un élément cible et un composant. Il remplace l'élément cible par les élèments du composant. On peut attacher optionellement dans des données en accrochant une propriété data au composant:</p>
                 <pre>
                     <code class="language-js">
+// On récupére la cible.
+const ma_cible = document.querySelector("#ma_cible");
+
+// On attache des données.
 composant.data = {name:"", prenom:""};
-ascension.installe(composant);
+                        
+// On installer
+ascension.installe(ma_cible, composant);
                 </pre>
                 </div>
         </main>
