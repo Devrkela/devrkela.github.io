@@ -8,6 +8,7 @@ function showHeader(model){
     }
     
     document.querySelector("header").setAttribute("class", "show");
-    document.querySelector(".scrim").addEventListener("click", closeMenu);
+    model.querySelector(".scrim").addEventListener("click", closeMenu);
+    model.querySelector(".close").addEventListener("click", closeMenu);
     model.querySelector("#menu").addEventListener("click", openMenu);
 }

@@ -12,11 +12,12 @@ header{
     justify-content:space-between;
     position:fixed;
     z-index:10;
-    width:100vw;
+    width:100%;
     box-shadow:0px 1px 4px #b7b7b7;
     top:0;
     left:0;
     background:white;
+    box-sizing:border-box;
 }
 
 
@@ -32,6 +33,7 @@ header > #menu{
     background:none;
 
     display:none;
+    cursor:pointer;
 }
 
 header > nav{
@@ -91,10 +93,32 @@ header > nav > a.logo{
     padding-left:0;
 }
 
+
+header > nav > button.close{
+    background:#f1f1f1;
+    border:none;
+
+    align-self:end;
+    width:48px;
+    height:48px;
+    border-radius:24px;
+    margin-top:8px;
+    margin-right:8px;
+
+    cursor:pointer;
+
+    transition:background 250ms ease;
+
+    display:none;
+}
+
+header > nav > button.close:hover{
+    background:#ebebeb;
+}
+
 @media(width < 840px){
     header {
         padding:0;
-        z-index:1001;
     }
     header > nav{
         position:fixed;
@@ -103,8 +127,7 @@ header > nav > a.logo{
         height:100vh;
         width:360px;
         background:white;
-        z-index:1001;
-
+        z-index:1;
         flex-direction:column;
         align-items:start;
         padding-left:16px;
@@ -134,5 +157,10 @@ header > nav > a.logo{
     body[menu=true] .scrim{
         opacity:1;
         pointer-events:unset;
+        z-index:0;
+    }
+
+    header > nav > button.close{
+        display:block;
     }
 }

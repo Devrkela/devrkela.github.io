@@ -1,0 +1,103 @@
+aside.navigation_interne  {
+    /** On exagére le nombre si jamais des éléments sont rajoutés à main. **/
+    grid-row: 1/10;
+    height: 100%;
+    width: 240px;
+    background: white;
+
+    display:flex;
+    flex-direction:column;
+
+    border-right:1px solid #e1e1e1;
+}
+
+aside.navigation_interne > button.close{
+    background:#f1f1f1;
+    border:none;
+
+    align-self:end;
+    width:48px;
+    height:48px;
+    border-radius:24px;
+    margin-top:8px;
+    margin-right:8px;
+
+    cursor:pointer;
+
+    transition:background 250ms ease;
+
+    display:none;
+}
+
+aside.navigation_interne > button.close:hover{
+    background:#ebebeb;
+
+}
+
+aside.navigation_interne  > nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-left: 32px;
+    margin-top: 32px;
+    gap: 32px;
+}
+
+/** On baisse le poid de la police. **/
+aside.navigation_interne  > nav > section > h3 {
+    font-weight: 500;
+}
+
+/** Cette section stylise la liste de liens. **/
+aside.navigation_interne  > nav > section > ul {
+    list-style: none;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+aside.navigation_interne  > nav > section > ul > li > a {
+    text-decoration: none;
+    color: #878787;
+    font-size: 14px;
+    transition: color 500ms ease;
+}
+
+aside.navigation_interne  > nav > section > ul > li:hover > a {
+    color: black;
+}
+
+.scrim_navigation_interne {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #00000085;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (width < 840px) {
+    aside.navigation_interne {
+        position: fixed;
+        z-index: 2;
+        transform: translate3d(-100%, 0, 0);
+        transition: transform 250ms ease;
+    }
+
+    aside.navigation_interne > button.close{
+        display:block;
+    }
+    
+    body[navigation_interne=true] aside.navigation_interne  {
+        transform: translate3d(0, 0, 0);
+    }
+
+    body[navigation_interne=true] .scrim_navigation_interne {
+        opacity: 1;
+        pointer-events: unset;
+    }
+}

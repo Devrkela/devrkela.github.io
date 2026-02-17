@@ -7,7 +7,7 @@ components["header"].then(ascension.installe.bind(null, document.querySelector("
 components["navigation/interne"] = await ascension.fabrique("/components/navigation/interne");
 
 components["navigation/interne"].data = {
-    list:await ascension.fabrique("/components/pages/reference/navigation", {html:true})    
+    list:await ascension.fabrique("/components/pages/guides/navigation", {html:true})    
 };
 
 ascension.installe(document.querySelector("main > slot[name=navigation_interne]"), components["navigation/interne"]);
