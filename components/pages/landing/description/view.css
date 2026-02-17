@@ -26,9 +26,10 @@
     display:flex;
     gap:1em;
 }
+
 .buttons > .button{
     padding:1em 2em 1em 2em;
-    font-size:1em;
+    font-size:0.9em;
     text-decoration:none;
     color:black;
     background:#e9e9e9;
