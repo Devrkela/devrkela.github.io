@@ -1,1 +1,163 @@
-!function(){"use strict";function n(n,e,t){document.querySelector(`link[href="${n}"]`)&&resolve(document.querySelector(`link[href="${n}"]`));const i=document.createElement("link");i.setAttribute("rel","stylesheet"),i.setAttribute("href",n),i.onload=function(){i.sheet.disabled=!0,e(i)},i.onerror=function(n){t(n),i.remove()},document.head.appendChild(i)}function e(n){return n.json()}function t(n){return n.text()}function i(n){return fetch(n).then(t)}function o(n){return new Function("return "+n)()||!0}window.ascension={};const s=new DOMParser;function r(n){return s.parseFromString(n,"text/html")}function c(){return this}function u(n,e,t){const i=document.createElement("img");i.src=n,i.addEventListener("error",function(n){t(n)}),i.addEventListener("load",function(){e(i.decode().then(c.bind(i)))})}function l(n){const e=document.createElement("div");return e.innerHTML=n,e.firstChild}function d(n){const e=document.createElement("div");return e.innerHTML=`<template>${n}</template>`,e.firstChild.content}function a(n,e,t){const i=document.createElement("video");i.src=n,i.addEventListener("error",function(n){t(n)}),i.addEventListener("loadeddata",function(){e(i)})}var f={css:function(e){return new Promise(n.bind(null,e))},iife:function(n){return i(n).then(o)},html:function(n){return i(n).then(r)},image:function(n){return new Promise(u.bind(null,n))},json:function(n){return function(n){return fetch(n).then(e)}(n)},svg:function(n){return i(n).then(l)},template:function(n){return i(n).then(d)},video:function(n){return new Promise(a.bind(null,n))}};function m(n,e){return e?f[e]?f[e](n):console.warn("Type is not supported!"):f.iife(n)}m.moduleMap={},window.ascension.alimente=m;var h=new function(){const n=["css","iife","html","image","json","svg","template","video"],e={};for(let t of n)e[t]={};this.get=function(t,i="iife"){return n.includes(i)?e[i][t]:console.warn("Type is not supported!")},this.put=function(t,i,o="iife"){return n.includes(o)?e[o][t]=i:console.warn("Type is not supported!")}};window.ascension.entrepose=h;const w=["css","iife","html","image","json","svg","template","video"],p={};for(let n of w)p[n]={};function b(n,e,t){return ascension.entrepose.put(n,t,e),delete p[e][n],t}function v(n,e,t){const i={},o=Object.keys(n);let s=o.length;function r(n,t){i[n]=t,s-=1,s||e(i)}for(let e of o)n[e].then(r.bind(null,e))}window.ascension.distribue=function(n,e="iife"){const t=p[e][n];if(t)return t;const i=window.ascension.entrepose.get(n,e);return i?Promise.resolve(i):p[e][n]=window.ascension.alimente(n,e).then(b.bind(null,n,e))},window.ascension.fabrique=function(n,e){const t={};return"/"!==n[n.length-1]&&(n+="/"),e?(e.html&&(t.html=window.ascension.distribue(n+"model.html","template")),e.css&&(t.css=window.ascension.distribue(n+"view.css","css")),e.js&&(t.js=window.ascension.distribue(n+"controller.js"))):(t.html=window.ascension.distribue(n+"model.html","template"),t.css=window.ascension.distribue(n+"view.css","css"),t.js=window.ascension.distribue(n+"controller.js")),new Promise(v.bind(null,t))},window.ascension.installe=function(n,e){e.css&&e.css.sheet&&(e.css.sheet.disabled=!1),e.js&&e.js(e.html,e.data),e.html&&n.replaceWith.apply(n,e.html.children)}}();
+!function() {
+    "use strict";
+    function n(n, e, t) {
+        document.querySelector(`link[href="${n}"]`) && resolve(document.querySelector(`link[href="${n}"]`));
+        const i = document.createElement("link");
+        i.setAttribute("rel", "stylesheet"),
+        i.setAttribute("href", n),
+        i.onload = function() {
+            i.sheet.disabled = !0,
+            e(i)
+        }
+        ,
+        i.onerror = function(n) {
+            t(n),
+            i.remove()
+        }
+        ,
+        document.head.appendChild(i)
+    }
+    function e(n) {
+        return n.json()
+    }
+    function t(n) {
+        return n.text()
+    }
+    function i(n) {
+        return fetch(n, {cache: "no-store"}).then(t)
+    }
+    function o(n) {
+        return new Function("return " + n)() || !0
+    }
+    window.ascension = {};
+    const s = new DOMParser;
+    function r(n) {
+        return s.parseFromString(n, "text/html")
+    }
+    function c() {
+        return this
+    }
+    function u(n, e, t) {
+        const i = document.createElement("img");
+        i.src = n,
+        i.addEventListener("error", function(n) {
+            t(n)
+        }),
+        i.addEventListener("load", function() {
+            e(i.decode().then(c.bind(i)))
+        })
+    }
+    function l(n) {
+        const e = document.createElement("div");
+        return e.innerHTML = n,
+        e.firstChild
+    }
+    function d(n) {
+        const e = document.createElement("div");
+        return e.innerHTML = `<template>${n}</template>`,
+        e.firstChild.content
+    }
+    function a(n, e, t) {
+        const i = document.createElement("video");
+        i.src = n,
+        i.addEventListener("error", function(n) {
+            t(n)
+        }),
+        i.addEventListener("loadeddata", function() {
+            e(i)
+        })
+    }
+    var f = {
+        css: function(e) {
+            return new Promise(n.bind(null, e))
+        },
+        iife: function(n) {
+            return i(n).then(o)
+        },
+        html: function(n) {
+            return i(n).then(r)
+        },
+        image: function(n) {
+            return new Promise(u.bind(null, n))
+        },
+        json: function(n) {
+            return function(n) {
+                return fetch(n, {cache: "no-store"}).then(e)
+            }(n)
+        },
+        svg: function(n) {
+            return i(n).then(l)
+        },
+        template: function(n) {
+            return i(n).then(d)
+        },
+        video: function(n) {
+            return new Promise(a.bind(null, n))
+        }
+    };
+    function m(n, e) {
+        return e ? f[e] ? f[e](n) : console.warn("Type is not supported!") : f.iife(n)
+    }
+    m.moduleMap = {},
+    window.ascension.alimente = m;
+    var h = new function() {
+        const n = ["css", "iife", "html", "image", "json", "svg", "template", "video"]
+          , e = {};
+        for (let t of n)
+            e[t] = {};
+        this.get = function(t, i="iife") {
+            return n.includes(i) ? e[i][t] : console.warn("Type is not supported!")
+        }
+        ,
+        this.put = function(t, i, o="iife") {
+            return n.includes(o) ? e[o][t] = i : console.warn("Type is not supported!")
+        }
+    }
+    ;
+    window.ascension.entrepose = h;
+    const w = ["css", "iife", "html", "image", "json", "svg", "template", "video"]
+      , p = {};
+    for (let n of w)
+        p[n] = {};
+    function b(n, e, t) {
+        return ascension.entrepose.put(n, t, e),
+        delete p[e][n],
+        t
+    }
+    function v(n, e, t) {
+        const i = {}
+          , o = Object.keys(n);
+        let s = o.length;
+        function r(n, t) {
+            i[n] = t,
+            s -= 1,
+            s || e(i)
+        }
+        for (let e of o)
+            n[e].then(r.bind(null, e))
+    }
+    window.ascension.distribue = function(n, e="iife") {
+        const t = p[e][n];
+        if (t)
+            return t;
+        const i = window.ascension.entrepose.get(n, e);
+        return i ? Promise.resolve(i) : p[e][n] = window.ascension.alimente(n, e).then(b.bind(null, n, e))
+    }
+    ,
+    window.ascension.fabrique = function(n, e) {
+        const t = {};
+        return "/" !== n[n.length - 1] && (n += "/"),
+        e ? (e.html && (t.html = window.ascension.distribue(n + "model.html", "template")),
+        e.css && (t.css = window.ascension.distribue(n + "view.css", "css")),
+        e.js && (t.js = window.ascension.distribue(n + "controller.js"))) : (t.html = window.ascension.distribue(n + "model.html", "template"),
+        t.css = window.ascension.distribue(n + "view.css", "css"),
+        t.js = window.ascension.distribue(n + "controller.js")),
+        new Promise(v.bind(null, t))
+    }
+    ,
+    window.ascension.installe = function(n, e) {
+        e.css && e.css.sheet && (e.css.sheet.disabled = !1),
+        e.js && e.js(e.html, e.data),
+        e.html && n.replaceWith.apply(n, e.html.children)
+    }
+}();
